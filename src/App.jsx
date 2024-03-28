@@ -14,6 +14,7 @@ import JobPage from './pages/JobPage';
 import {jobLoader} from './pages/JobPage';
 import JobErr from './components/JobErr';
 import {toast} from 'react-toastify';
+import EditJobPage from './pages/EditJobPage';
 
 //loader loads the data before the component renders
 
@@ -50,8 +51,31 @@ const App = () => {
       toast.success('job deleted successfully');
     } catch (error) {
       console.error('Error deleting job:', error);
+      toast.error('Failed to delete job. Please try again later.');
     }
   };
+
+  //update job
+  const editJob = async (job) => {
+    try {
+      const res = await fetch(`/api/jobs/${job.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(job),
+      });
+      console.log(res);
+      if (!res.ok) {
+        throw new Error('Failed to edit job. Server error.');
+      }
+      toast.success('job edited successfully');
+    } catch (error) {
+      console.error('Error deleting job:', error);
+      toast.error('Failed to edit job. Please try again later.');
+    }
+  };
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
@@ -67,6 +91,12 @@ const App = () => {
         <Route
           path="/jobs/:id"
           element={<JobPage deleteJob={deleteJob} />}
+          loader={jobLoader}
+          errorElement={<JobErr />}
+        />
+        <Route
+          path="/edit-job/:id"
+          element={<EditJobPage editJob={editJob} />}
           loader={jobLoader}
           errorElement={<JobErr />}
         />
