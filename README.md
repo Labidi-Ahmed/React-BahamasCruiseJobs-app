@@ -1,5 +1,5 @@
 #  Bahamas Cruise Jobs React App
-<img src="frontend/public/preview.png" >
+<img src="frontend/public/image.png" >
 
 A full-stack job listing application built with React, tailored for exploring career opportunities on Bahamas cruise ships. The app utilizes JSON Server as a mock backend and is styled using Tailwind CSS. This project covers fundamental React concepts, data fetching, routing with React Router, form handling, and more.
 
