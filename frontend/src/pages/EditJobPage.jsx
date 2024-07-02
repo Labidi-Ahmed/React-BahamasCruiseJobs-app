@@ -38,7 +38,9 @@ const EditJobPage = ({editJob}) => {
       <div className="container m-auto max-w-2xl py-24">
         <div className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
           <form onSubmit={submitForm}>
-            <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
+            <h2 className="text-3xl text-center font-semibold mb-6">
+              Edit Job
+            </h2>
 
             <div className="mb-4">
               <label
@@ -55,7 +57,7 @@ const EditJobPage = ({editJob}) => {
                 value={job.type}>
                 <option value="Full-Time">Full-Time</option>
                 <option value="Part-Time">Part-Time</option>
-                <option value="Remote">Remote</option>
+
                 <option value="Internship">Internship</option>
               </select>
             </div>
@@ -69,7 +71,7 @@ const EditJobPage = ({editJob}) => {
                 id="title"
                 name="title"
                 className="border rounded w-full py-2 px-3 mb-2"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="e.g., Cruise Ship Chef"
                 required
                 value={job.title}
                 onChange={(e) => setJob({...job, title: e.target.value})}
@@ -166,7 +168,7 @@ const EditJobPage = ({editJob}) => {
                 name="company_description"
                 className="border rounded w-full py-2 px-3"
                 rows="4"
-                placeholder="What does your company do?"
+                placeholder="Briefly describe your company"
                 value={company.description}
                 onChange={(e) =>
                   setCompany({...company, description: e.target.value})
@@ -184,7 +186,7 @@ const EditJobPage = ({editJob}) => {
                 id="contact_email"
                 name="contact_email"
                 className="border rounded w-full py-2 px-3"
-                placeholder="Email address htmlFor applicants"
+                placeholder="Email address "
                 required
                 value={company.contactEmail}
                 onChange={(e) =>
@@ -203,7 +205,7 @@ const EditJobPage = ({editJob}) => {
                 id="contact_phone"
                 name="contact_phone"
                 className="border rounded w-full py-2 px-3"
-                placeholder="Optional phone htmlFor applicants"
+                placeholder="Optional phone "
                 value={company.contactPhone}
                 onChange={(e) =>
                   setCompany({...company, contactPhone: e.target.value})
