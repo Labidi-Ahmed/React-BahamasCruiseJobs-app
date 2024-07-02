@@ -25,7 +25,9 @@ A full-stack job listing application built with React, tailored for exploring ca
 This project uses JSON-Server for a mock backend.
 
 ### Install Dependencies
-
+```bash
+cd frontend
+```
 ```bash
 npm install
 ```
