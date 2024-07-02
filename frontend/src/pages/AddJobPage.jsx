@@ -181,7 +181,7 @@ const AddJobPage = ({addJobSubmit}) => {
                 id="contact_email"
                 name="contact_email"
                 className="border rounded w-full py-2 px-3"
-                placeholder="Email address "
+                placeholder="Email address"
                 required
                 value={company.contactEmail}
                 onChange={(e) =>
