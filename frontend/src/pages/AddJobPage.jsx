@@ -1,37 +1,34 @@
-import {useLoaderData, useNavigate} from 'react-router-dom';
 import {useState} from 'react';
-const EditJobPage = ({editJob}) => {
-  const initialJob = useLoaderData();
+import {useNavigate} from 'react-router-dom';
 
+const AddJobPage = ({addJobSubmit}) => {
   const navigate = useNavigate();
   const [job, setJob] = useState({
-    id: initialJob.id,
-    title: initialJob.title,
-    type: initialJob.type,
-    description: initialJob.description,
-    location: initialJob.location,
-    salary: initialJob.salary,
+    title: '',
+    type: 'Full-Time',
+    description: '',
+    location: '',
+    salary: 'Under $50K',
   });
-
   const [company, setCompany] = useState({
-    name: initialJob.company.name,
-    description: initialJob.company.description,
-    contactEmail: initialJob.company.contactEmail,
-    contactPhone: initialJob.company.contactPhone,
+    name: '',
+    description: '',
+    contactEmail: '',
+    contactPhone: '',
   });
 
   const submitForm = (e) => {
     e.preventDefault();
-    const editedJob = {
+    const newJob = {
       ...job,
       company: {...company},
     };
 
-    editJob(editedJob);
+    addJobSubmit(newJob);
 
     //rediraction to jobs page
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    return navigate(`/jobs/${job.id}`);
+    return navigate('/jobs');
   };
   return (
     <section className="bg-indigo-50">
@@ -55,7 +52,7 @@ const EditJobPage = ({editJob}) => {
                 value={job.type}>
                 <option value="Full-Time">Full-Time</option>
                 <option value="Part-Time">Part-Time</option>
-                <option value="Remote">Remote</option>
+
                 <option value="Internship">Internship</option>
               </select>
             </div>
@@ -69,7 +66,7 @@ const EditJobPage = ({editJob}) => {
                 id="title"
                 name="title"
                 className="border rounded w-full py-2 px-3 mb-2"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="e.g., Cruise Ship Chef"
                 required
                 value={job.title}
                 onChange={(e) => setJob({...job, title: e.target.value})}
@@ -107,15 +104,15 @@ const EditJobPage = ({editJob}) => {
                 value={job.salary}
                 onChange={(e) => setJob({...job, salary: e.target.value})}>
                 <option value="Under $50K">Under $50K</option>
-                <option value="$50K - $60K">$50K - $60K</option>
-                <option value="$60K - $70K">$60K - $70K</option>
-                <option value="$70K - $80K">$70K - $80K</option>
-                <option value="$80K - $90K">$80K - $90K</option>
-                <option value="$90K - $100K">$90K - $100K</option>
-                <option value="$100K - $125K">$100K - $125K</option>
-                <option value="$125K - $150K">$125K - $150K</option>
-                <option value="$150K - $175K">$150K - $175K</option>
-                <option value="$175K - $200K">$175K - $200K</option>
+                <option value="$50K - 60K">$50K - $60K</option>
+                <option value="$60K - 70K">$60K - $70K</option>
+                <option value="$70K - 80K">$70K - $80K</option>
+                <option value="$80K - 90K">$80K - $90K</option>
+                <option value="$90K - 100K">$90K - $100K</option>
+                <option value="$100K - 125K">$100K - $125K</option>
+                <option value="$125K - 150K">$125K - $150K</option>
+                <option value="$150K - 175K">$150K - $175K</option>
+                <option value="$175K - 200K">$175K - $200K</option>
                 <option value="Over $200K">Over $200K</option>
               </select>
             </div>
@@ -166,7 +163,7 @@ const EditJobPage = ({editJob}) => {
                 name="company_description"
                 className="border rounded w-full py-2 px-3"
                 rows="4"
-                placeholder="What does your company do?"
+                placeholder="Briefly describe your company"
                 value={company.description}
                 onChange={(e) =>
                   setCompany({...company, description: e.target.value})
@@ -184,7 +181,7 @@ const EditJobPage = ({editJob}) => {
                 id="contact_email"
                 name="contact_email"
                 className="border rounded w-full py-2 px-3"
-                placeholder="Email address htmlFor applicants"
+                placeholder="Email address "
                 required
                 value={company.contactEmail}
                 onChange={(e) =>
@@ -203,7 +200,7 @@ const EditJobPage = ({editJob}) => {
                 id="contact_phone"
                 name="contact_phone"
                 className="border rounded w-full py-2 px-3"
-                placeholder="Optional phone htmlFor applicants"
+                placeholder="Optional phone "
                 value={company.contactPhone}
                 onChange={(e) =>
                   setCompany({...company, contactPhone: e.target.value})
@@ -213,9 +210,9 @@ const EditJobPage = ({editJob}) => {
 
             <div>
               <button
-                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                 type="submit">
-                Edit Job
+                Add Job
               </button>
             </div>
           </form>
@@ -225,4 +222,4 @@ const EditJobPage = ({editJob}) => {
   );
 };
 
-export default EditJobPage;
+export default AddJobPage;

@@ -1,34 +1,37 @@
+import {useLoaderData, useNavigate} from 'react-router-dom';
 import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+const EditJobPage = ({editJob}) => {
+  const initialJob = useLoaderData();
 
-const AddJobPage = ({addJobSubmit}) => {
   const navigate = useNavigate();
   const [job, setJob] = useState({
-    title: '',
-    type: 'Full-Time',
-    description: '',
-    location: '',
-    salary: 'Under $50K',
+    id: initialJob.id,
+    title: initialJob.title,
+    type: initialJob.type,
+    description: initialJob.description,
+    location: initialJob.location,
+    salary: initialJob.salary,
   });
+
   const [company, setCompany] = useState({
-    name: '',
-    description: '',
-    contactEmail: '',
-    contactPhone: '',
+    name: initialJob.company.name,
+    description: initialJob.company.description,
+    contactEmail: initialJob.company.contactEmail,
+    contactPhone: initialJob.company.contactPhone,
   });
 
   const submitForm = (e) => {
     e.preventDefault();
-    const newJob = {
+    const editedJob = {
       ...job,
       company: {...company},
     };
 
-    addJobSubmit(newJob);
+    editJob(editedJob);
 
     //rediraction to jobs page
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    return navigate('/jobs');
+    return navigate(`/jobs/${job.id}`);
   };
   return (
     <section className="bg-indigo-50">
@@ -104,15 +107,15 @@ const AddJobPage = ({addJobSubmit}) => {
                 value={job.salary}
                 onChange={(e) => setJob({...job, salary: e.target.value})}>
                 <option value="Under $50K">Under $50K</option>
-                <option value="$50K - 60K">$50K - $60K</option>
-                <option value="$60K - 70K">$60K - $70K</option>
-                <option value="$70K - 80K">$70K - $80K</option>
-                <option value="$80K - 90K">$80K - $90K</option>
-                <option value="$90K - 100K">$90K - $100K</option>
-                <option value="$100K - 125K">$100K - $125K</option>
-                <option value="$125K - 150K">$125K - $150K</option>
-                <option value="$150K - 175K">$150K - $175K</option>
-                <option value="$175K - 200K">$175K - $200K</option>
+                <option value="$50K - $60K">$50K - $60K</option>
+                <option value="$60K - $70K">$60K - $70K</option>
+                <option value="$70K - $80K">$70K - $80K</option>
+                <option value="$80K - $90K">$80K - $90K</option>
+                <option value="$90K - $100K">$90K - $100K</option>
+                <option value="$100K - $125K">$100K - $125K</option>
+                <option value="$125K - $150K">$125K - $150K</option>
+                <option value="$150K - $175K">$150K - $175K</option>
+                <option value="$175K - $200K">$175K - $200K</option>
                 <option value="Over $200K">Over $200K</option>
               </select>
             </div>
@@ -210,9 +213,9 @@ const AddJobPage = ({addJobSubmit}) => {
 
             <div>
               <button
-                className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                 type="submit">
-                Add Job
+                Edit Job
               </button>
             </div>
           </form>
@@ -222,4 +225,4 @@ const AddJobPage = ({addJobSubmit}) => {
   );
 };
 
-export default AddJobPage;
+export default EditJobPage;

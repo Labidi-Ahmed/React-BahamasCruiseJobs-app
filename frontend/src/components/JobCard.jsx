@@ -26,13 +26,13 @@ const JobCard = ({job}) => {
                   ? setFullDescription(false)
                   : setFullDescription(true);
               }}
-              className="h-[36px] text-indigo-500 hover:text-indigo-600
+              className="h-[36px] text-blue-500 hover:text-blue-600
             ">
               {showFullDescription ? 'Less' : 'More'}{' '}
             </button>
           </div>
 
-          <h3 className="text-indigo-500 mb-2">{job.salary}</h3>
+          <h3 className="text-blue-500 mb-2">{job.salary}</h3>
 
           <div className="border border-gray-100 mb-5"></div>
 
@@ -43,7 +43,7 @@ const JobCard = ({job}) => {
             </div>
             <Link
               to={`/jobs/${job.id}`}
-              className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm">
+              className="h-[36px] bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-center text-sm">
               Read more
             </Link>
           </div>

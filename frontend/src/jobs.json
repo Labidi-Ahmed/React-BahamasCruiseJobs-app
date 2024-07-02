@@ -1,0 +1,88 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Senior Cruise Ship Engineer",
+      "type": "Full-Time",
+      "description": "We are seeking a talented Senior Engineer to join our cruise ship team in Nassau, Bahamas. The ideal candidate will have strong skills in marine engineering and maintenance, with experience working on large vessels.",
+      "location": "Nassau, Bahamas",
+      "salary": "$80K - $90K",
+      "company": {
+        "name": "Oceanic Voyages",
+        "description": "Oceanic Voyages is a leading cruise line company offering luxury cruises in the Bahamas. We pride ourselves on delivering exceptional experiences to our guests while fostering a collaborative and innovative work environment.",
+        "contactEmail": "contact@oceanicvoyages.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Cruise Ship Entertainment Manager",
+      "type": "Full-Time",
+      "location": "Freeport, Bahamas",
+      "description": "Join our team as an Entertainment Manager in Freeport, Bahamas. We are looking for a motivated individual with a passion for creating unforgettable experiences for our guests. Experience in event planning and management is highly desirable.",
+      "salary": "$70K - $80K",
+      "company": {
+        "name": "Sunset Cruises",
+        "description": "Sunset Cruises is a premier cruise line specializing in entertainment and leisure cruises in the Bahamas. Our team is dedicated to delivering exceptional service and memorable experiences for our guests.",
+        "contactEmail": "contact@sunsetcruises.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Cruise Ship Chef",
+      "type": "Full-Time",
+      "location": "Nassau, Bahamas",
+      "description": "Are you passionate about culinary arts? Join our team as a Cruise Ship Chef in Nassau, Bahamas, and work on creating delicious and diverse menus for our guests. We offer competitive compensation and a collaborative work environment where your creativity is valued.",
+      "salary": "$70K - $80K",
+      "company": {
+        "name": "Caribbean Cruises",
+        "description": "Caribbean Cruises is a leading cruise line offering culinary adventures at sea. With a focus on quality and guest satisfaction, we are committed to delivering exceptional dining experiences.",
+        "contactEmail": "contact@caribbeancruises.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Cruise Ship Guest Services Manager",
+      "type": "Part-Time",
+      "description": "Join our team as a Part-Time Guest Services Manager in Freeport, Bahamas. We are looking for a self-motivated individual with a passion for providing excellent customer service. This position offers flexible hours and the opportunity to work remotely.",
+      "location": "Freeport, Bahamas",
+      "salary": "$60K - $70K",
+      "company": {
+        "name": "Bahama Breeze Cruises",
+        "description": "Bahama Breeze Cruises is a dynamic startup specializing in luxury and adventure cruises in the Bahamas. We are committed to fostering a diverse and inclusive workplace where creativity and innovation thrive.",
+        "contactEmail": "contact@bahamabreezecruises.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Cruise Ship Activity Coordinator",
+      "type": "Full-Time",
+      "description": "Exciting opportunity for a Full-Time Activity Coordinator in Nassau, Bahamas. We are seeking a talented individual with a passion for organizing and leading guest activities. Join our team and make an impact!",
+      "location": "Nassau, Bahamas",
+      "salary": "$50K - $60K",
+      "company": {
+        "name": "Blue Wave Cruises",
+        "description": "Blue Wave Cruises is a rapidly growing cruise line specializing in adventure and leisure cruises in the Bahamas. We offer a dynamic and collaborative work environment where employees are encouraged to think creatively and innovate.",
+        "contactEmail": "contact@bluewavecruises.com",
+        "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Cruise Ship Nurse",
+      "type": "Full-Time",
+      "description": "Join our team as a Cruise Ship Nurse in Nassau, Bahamas. We are looking for a skilled and compassionate individual to help us provide top-notch medical care to our guests. Competitive salary and great benefits package available.",
+      "location": "Nassau, Bahamas",
+      "salary": "$70K - $90K",
+      "company": {
+        "name": "Paradise Cruises",
+        "description": "Paradise Cruises is a leading cruise line specializing in luxury cruises in the Bahamas. We are committed to providing our guests with exceptional service and our employees with a supportive and rewarding work environment.",
+        "contactEmail": "contact@paradisecruises.com",
+        "contactPhone": "555-555-5555"
+      }
+    }
+  ]
+}
